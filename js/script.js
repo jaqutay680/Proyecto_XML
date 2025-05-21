@@ -162,11 +162,6 @@ function showQuestion() {
 function nextQuestion() {
   const selected = document.querySelector('.choice.selected');
 
-  if (!selected) {
-    alert('Por favor selecciona una respuesta antes de continuar.');
-    return;
-  }
-
   const isCorrect = selected.dataset.correct === 'true';
   if (isCorrect) {
     score++;
