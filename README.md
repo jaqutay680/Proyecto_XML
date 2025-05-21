@@ -12,19 +12,25 @@ Este proyecto es un cuestionario bilingüe (español e inglés) sobre coches, he
 ## 📦 Estructura
 ProyectoXML/
 │
+
 ├── index.html
+
 ├── README.md
+
 ├── css/
+
 │ └── style.css
+
 ├── js/
+
 │ └── script.js
+
 └── xml/
+
 ├── preguntas_es.xml
+
 └── preguntas_en.xml
 
-perl
-Copiar
-Editar
 
 ## 🌐 Enlace del proyecto
 🔗 https://jaqutay680.github.io/Proyecto_XML/
