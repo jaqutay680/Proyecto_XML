@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quiz XML/AJAX</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="quiz-container">
@@ -30,12 +30,16 @@
         </div>
         <p id="question">Selecciona un idioma para comenzar el quiz</p>
         <div id="choices"></div>
-<button id="next-btn" onclick="handleMainButton()">Comenzar Quiz</button>
+        <button id="next-btn" onclick="handleMainButton()">Comenzar Quiz</button>
+      </div>
+
       <div id="result" class="hidden">
         <h2>¡Quiz completado!</h2>
-        <div id="final-score"></div>
-        <div id="result-message"></div>
-        <button onclick="resetQuiz()">Reiniciar Quiz</button>
+        <div class="result-container">
+          <div id="final-score" class="score-box"></div>
+          <div id="result-message" class="message-box"></div>
+          <button onclick="resetQuiz()" class="reset-btn">Reiniciar Quiz</button>
+        </div>
       </div>
     </main>
   </div>
