@@ -174,17 +174,17 @@
   <question id="19">
     <wording>Which company makes the Panda model?</wording>
     <choices>
-      <choice correct="yes">Fiat</choice>
+      <choice>Fiat</choice>
       <choice>Citroën</choice>
       <choice>Opel</choice>
-      <choice>Seat</choice>
+      <choice correct="yes">Seat</choice>
     </choices>
   </question>
   <question id="20">
     <wording>Which brand is known for its propeller logo?</wording>
     <choices>
-      <choice correct="yes">BMW</choice>
-      <choice>Mercedes-Benz</choice>
+      <choice>BMW</choice>
+      <choice correct="yes">Mercedes-Benz</choice>
       <choice>Audi</choice>
       <choice>Volkswagen</choice>
     </choices>
