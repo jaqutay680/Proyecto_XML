@@ -27,4 +27,4 @@ Copiar
 Editar
 
 ## 🌐 Enlace del proyecto
-🔗 https://jaqutay680.github.io/ProyectoXML/
+🔗 https://jaqutay680.github.io/Proyecto_XML/
