@@ -6,7 +6,7 @@
   --selected-color: #2196f3;
   --text-color: #333;
   --light-bg: #f5f5f5;
-  --white: #ffffff;
+  --white: #ffffffd0;
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -18,23 +18,38 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient 135deg, var(--primary-color), var(--secondary-color);
-  color: var(--text-color);
+  background: url('fondo.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  position: relative;
+}
+
+/* Capa semitransparente para mejorar legibilidad */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: -1;
 }
 
 .quiz-container {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 800px;
   padding: 30px;
   margin: 20px auto;
+  backdrop-filter: blur(2px);
 }
 
 header {
@@ -192,4 +207,52 @@ button:disabled {
   .quiz-container {
     padding: 20px;
   }
+}
+/* Estilos para los resultados */
+#result {
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+.result-container {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.score-box {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border-left: 5px solid #4a6fa5;
+}
+
+.message-box {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.reset-btn {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.reset-btn:hover {
+  background-color: #3a5a8f;
 }
