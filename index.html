@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz XML/AJAX</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <header>
+      <h1>Quiz sobre XML y AJAX</h1>
+      <div class="quiz-info">
+        <div class="lang-selector">
+          <label for="lang">Idioma:</label>
+          <select id="lang" onchange="loadQuiz()">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <div id="timer">⏱ 00:00</div>
+        <div id="score">Puntuación: 0/0</div>
+      </div>
+    </header>
+
+    <main>
+      <div id="quiz-box">
+        <div class="progress-container">
+          <div class="progress-bar" id="progress"></div>
+        </div>
+        <p id="question">Selecciona un idioma para comenzar el quiz</p>
+        <div id="choices"></div>
+        <button id="next-btn" onclick="handleNextQuestion()">Comenzar</button>
+      </div>
+
+      <div id="result" class="hidden">
+        <h2>¡Quiz completado!</h2>
+        <div id="final-score"></div>
+        <div id="result-message"></div>
+        <button onclick="resetQuiz()">Reiniciar Quiz</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
