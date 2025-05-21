@@ -18,4 +18,175 @@
       <choice>Toyota</choice>
     </choices>
   </question>
+  <question id="2">
+    <wording>¿Cuál es la marca del modelo Civic?</wording>
+    <choices>
+      <choice correct="yes">Honda</choice>
+      <choice>Mazda</choice>
+      <choice>Nissan</choice>
+      <choice>Toyota</choice>
+    </choices>
+  </question>
+  <question id="3">
+    <wording>¿Qué país es origen de la marca Ferrari?</wording>
+    <choices>
+      <choice correct="yes">Italia</choice>
+      <choice>Francia</choice>
+      <choice>España</choice>
+      <choice>Alemania</choice>
+    </choices>
+  </question>
+  <question id="4">
+    <wording>¿Qué marca produce el modelo 911?</wording>
+    <choices>
+      <choice correct="yes">Porsche</choice>
+      <choice>Volkswagen</choice>
+      <choice>Audi</choice>
+      <choice>BMW</choice>
+    </choices>
+  </question>
+  <question id="5">
+    <wording>¿Qué marca lanzó el modelo Corolla?</wording>
+    <choices>
+      <choice correct="yes">Toyota</choice>
+      <choice>Nissan</choice>
+      <choice>Kia</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="6">
+    <wording>¿Qué coche eléctrico popular fabrica Tesla?</wording>
+    <choices>
+      <choice correct="yes">Model 3</choice>
+      <choice>Model C</choice>
+      <choice>RoadX</choice>
+      <choice>eVision</choice>
+    </choices>
+  </question>
+  <question id="7">
+    <wording>¿Qué marca tiene un logo con cuatro aros?</wording>
+    <choices>
+      <choice correct="yes">Audi</choice>
+      <choice>Mercedes</choice>
+      <choice>Skoda</choice>
+      <choice>Peugeot</choice>
+    </choices>
+  </question>
+  <question id="8">
+    <wording>¿Qué marca produce el modelo Fiesta?</wording>
+    <choices>
+      <choice correct="yes">Ford</choice>
+      <choice>Opel</choice>
+      <choice>Renault</choice>
+      <choice>Citroën</choice>
+    </choices>
+  </question>
+  <question id="9">
+    <wording>¿Qué tipo de combustible usa la mayoría de los coches diésel?</wording>
+    <choices>
+      <choice correct="yes">Gasóleo</choice>
+      <choice>Gasolina</choice>
+      <choice>Etanol</choice>
+      <choice>Gas natural</choice>
+    </choices>
+  </question>
+  <question id="10">
+    <wording>¿Cuál de estas marcas es coreana?</wording>
+    <choices>
+      <choice correct="yes">Hyundai</choice>
+      <choice>Volkswagen</choice>
+      <choice>Renault</choice>
+      <choice>Fiat</choice>
+    </choices>
+  </question>
+  <question id="11">
+    <wording>¿Qué marca fabrica el modelo Clio?</wording>
+    <choices>
+      <choice correct="yes">Renault</choice>
+      <choice>Peugeot</choice>
+      <choice>Citroën</choice>
+      <choice>Seat</choice>
+    </choices>
+  </question>
+  <question id="12">
+    <wording>¿Qué marca tiene como símbolo un león?</wording>
+    <choices>
+      <choice correct="yes">Peugeot</choice>
+      <choice>BMW</choice>
+      <choice>Fiat</choice>
+      <choice>Chevrolet</choice>
+    </choices>
+  </question>
+  <question id="13">
+    <wording>¿Qué marca produce el modelo Ibiza?</wording>
+    <choices>
+      <choice correct="yes">Seat</choice>
+      <choice>Fiat</choice>
+      <choice>Opel</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="14">
+    <wording>¿Cuál de estos modelos es un SUV?</wording>
+    <choices>
+      <choice correct="yes">Nissan Qashqai</choice>
+      <choice>Mini Cooper</choice>
+      <choice>Toyota Aygo</choice>
+      <choice>Ford Ka</choice>
+    </choices>
+  </question>
+  <question id="15">
+    <wording>¿Qué marca de lujo pertenece a Toyota?</wording>
+    <choices>
+      <choice correct="yes">Lexus</choice>
+      <choice>Infiniti</choice>
+      <choice>Acura</choice>
+      <choice>Genesis</choice>
+    </choices>
+  </question>
+  <question id="16">
+    <wording>¿Qué marca fabrica el modelo Golf?</wording>
+    <choices>
+      <choice correct="yes">Volkswagen</choice>
+      <choice>Opel</choice>
+      <choice>Fiat</choice>
+      <choice>Citroën</choice>
+    </choices>
+  </question>
+  <question id="17">
+    <wording>¿Qué marca produce el modelo Corsa?</wording>
+    <choices>
+      <choice correct="yes">Opel</choice>
+      <choice>Renault</choice>
+      <choice>Peugeot</choice>
+      <choice>Dacia</choice>
+    </choices>
+  </question>
+  <question id="18">
+    <wording>¿Qué marca de coches es americana?</wording>
+    <choices>
+      <choice correct="yes">Chevrolet</choice>
+      <choice>Skoda</choice>
+      <choice>Honda</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="19">
+    <wording>¿Qué empresa fabrica el modelo Panda?</wording>
+    <choices>
+      <choice correct="yes">Fiat</choice>
+      <choice>Citroën</choice>
+      <choice>Opel</choice>
+      <choice>Seat</choice>
+    </choices>
+  </question>
+  <question id="20">
+    <wording>¿Qué marca es conocida por su logo con una hélice?</wording>
+    <choices>
+      <choice correct="yes">BMW</choice>
+      <choice>Mercedes-Benz</choice>
+      <choice>Audi</choice>
+      <choice>Volkswagen</choice>
+    </choices>
+  </question>
 </test>
