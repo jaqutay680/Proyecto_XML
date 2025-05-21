@@ -10,7 +10,7 @@
 ]>
 <test>
   <question id="1">
-    <wording>Which brand makes the Mustang?</wording>
+    <wording>Which brand manufactures the Mustang model?</wording>
     <choices>
       <choice correct="yes">Ford</choice>
       <choice>Chevrolet</choice>
@@ -19,12 +19,174 @@
     </choices>
   </question>
   <question id="2">
-    <wording>Which country is Ferrari from?</wording>
+    <wording>Which brand makes the Civic model?</wording>
     <choices>
-      <choice>France</choice>
+      <choice correct="yes">Honda</choice>
+      <choice>Mazda</choice>
+      <choice>Nissan</choice>
+      <choice>Toyota</choice>
+    </choices>
+  </question>
+  <question id="3">
+    <wording>Which country is the origin of Ferrari?</wording>
+    <choices>
       <choice correct="yes">Italy</choice>
+      <choice>France</choice>
+      <choice>Spain</choice>
       <choice>Germany</choice>
-      <choice>United States</choice>
+    </choices>
+  </question>
+  <question id="4">
+    <wording>Which brand produces the 911 model?</wording>
+    <choices>
+      <choice correct="yes">Porsche</choice>
+      <choice>Volkswagen</choice>
+      <choice>Audi</choice>
+      <choice>BMW</choice>
+    </choices>
+  </question>
+  <question id="5">
+    <wording>Which brand launched the Corolla model?</wording>
+    <choices>
+      <choice correct="yes">Toyota</choice>
+      <choice>Nissan</choice>
+      <choice>Kia</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="6">
+    <wording>Which popular electric car is made by Tesla?</wording>
+    <choices>
+      <choice correct="yes">Model 3</choice>
+      <choice>Model C</choice>
+      <choice>RoadX</choice>
+      <choice>eVision</choice>
+    </choices>
+  </question>
+  <question id="7">
+    <wording>Which brand has a logo with four rings?</wording>
+    <choices>
+      <choice correct="yes">Audi</choice>
+      <choice>Mercedes</choice>
+      <choice>Skoda</choice>
+      <choice>Peugeot</choice>
+    </choices>
+  </question>
+  <question id="8">
+    <wording>Which brand produces the Fiesta model?</wording>
+    <choices>
+      <choice correct="yes">Ford</choice>
+      <choice>Opel</choice>
+      <choice>Renault</choice>
+      <choice>Citroën</choice>
+    </choices>
+  </question>
+  <question id="9">
+    <wording>What fuel is used by most diesel cars?</wording>
+    <choices>
+      <choice correct="yes">Diesel</choice>
+      <choice>Gasoline</choice>
+      <choice>Ethanol</choice>
+      <choice>Natural gas</choice>
+    </choices>
+  </question>
+  <question id="10">
+    <wording>Which of these brands is Korean?</wording>
+    <choices>
+      <choice correct="yes">Hyundai</choice>
+      <choice>Volkswagen</choice>
+      <choice>Renault</choice>
+      <choice>Fiat</choice>
+    </choices>
+  </question>
+  <question id="11">
+    <wording>Which brand makes the Clio model?</wording>
+    <choices>
+      <choice correct="yes">Renault</choice>
+      <choice>Peugeot</choice>
+      <choice>Citroën</choice>
+      <choice>Seat</choice>
+    </choices>
+  </question>
+  <question id="12">
+    <wording>Which brand has a lion as its logo?</wording>
+    <choices>
+      <choice correct="yes">Peugeot</choice>
+      <choice>BMW</choice>
+      <choice>Fiat</choice>
+      <choice>Chevrolet</choice>
+    </choices>
+  </question>
+  <question id="13">
+    <wording>Which brand produces the Ibiza model?</wording>
+    <choices>
+      <choice correct="yes">Seat</choice>
+      <choice>Fiat</choice>
+      <choice>Opel</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="14">
+    <wording>Which of these models is an SUV?</wording>
+    <choices>
+      <choice correct="yes">Nissan Qashqai</choice>
+      <choice>Mini Cooper</choice>
+      <choice>Toyota Aygo</choice>
+      <choice>Ford Ka</choice>
+    </choices>
+  </question>
+  <question id="15">
+    <wording>Which luxury brand belongs to Toyota?</wording>
+    <choices>
+      <choice correct="yes">Lexus</choice>
+      <choice>Infiniti</choice>
+      <choice>Acura</choice>
+      <choice>Genesis</choice>
+    </choices>
+  </question>
+  <question id="16">
+    <wording>Which brand makes the Golf model?</wording>
+    <choices>
+      <choice correct="yes">Volkswagen</choice>
+      <choice>Opel</choice>
+      <choice>Fiat</choice>
+      <choice>Citroën</choice>
+    </choices>
+  </question>
+  <question id="17">
+    <wording>Which brand produces the Corsa model?</wording>
+    <choices>
+      <choice correct="yes">Opel</choice>
+      <choice>Renault</choice>
+      <choice>Peugeot</choice>
+      <choice>Dacia</choice>
+    </choices>
+  </question>
+  <question id="18">
+    <wording>Which car brand is American?</wording>
+    <choices>
+      <choice correct="yes">Chevrolet</choice>
+      <choice>Skoda</choice>
+      <choice>Honda</choice>
+      <choice>Hyundai</choice>
+    </choices>
+  </question>
+  <question id="19">
+    <wording>Which company makes the Panda model?</wording>
+    <choices>
+      <choice correct="yes">Fiat</choice>
+      <choice>Citroën</choice>
+      <choice>Opel</choice>
+      <choice>Seat</choice>
+    </choices>
+  </question>
+  <question id="20">
+    <wording>Which brand is known for its propeller logo?</wording>
+    <choices>
+      <choice correct="yes">BMW</choice>
+      <choice>Mercedes-Benz</choice>
+      <choice>Audi</choice>
+      <choice>Volkswagen</choice>
     </choices>
   </question>
 </test>
