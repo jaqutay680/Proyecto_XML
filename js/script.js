@@ -1,42 +1,29 @@
 /**
- * =============================================
- * QUIZ SOBRE XML Y AJAX - ARCHIVO JAVASCRIPT
- * =============================================
- * 
- * Este script maneja toda la lógica del quiz:
- * - Carga de preguntas desde XML
- * - Manejo del temporizador
- * - Sistema de puntuación
- * - Navegación entre preguntas
- * - Mostrar resultados finales
- */
-
-/**
  * Variables globales del quiz
  */
-let questions = [];       // Almacena todas las preguntas cargadas
-let currentQuestion = 0;  // Índice de la pregunta actual
-let score = 0;            // Puntuación acumulada
-let timer = 0;            // Tiempo transcurrido en segundos
-let timerInterval;        // Referencia al intervalo del temporizador
-let quizStarted = false;  // Indica si el quiz ha comenzado
-let questionsLoaded = false; // Indica si las preguntas se cargaron correctamente
+let questions = [];
+let currentQuestion = 0;
+let score = 0;
+let timer = 0;
+let timerInterval;
+let quizStarted = false;
+let questionsLoaded = false;
 
 /**
  * Inicialización cuando el DOM está listo
  */
 document.addEventListener('DOMContentLoaded', function() {
-  // Cargar las preguntas automáticamente al inicio según el idioma por defecto
-  loadQuiz();
+  // Configurar eventos
+  document.getElementById('lang').addEventListener('change', loadQuiz);
+  document.getElementById('next-btn').addEventListener('click', handleMainButton);
+  document.querySelector('.reset-btn').addEventListener('click', resetQuiz);
   
-  // Configurar el evento de cambio de idioma
-  document.getElementById('lang').addEventListener('change', function() {
-    loadQuiz();
-  });
+  // Cargar el quiz inicial
+  loadQuiz();
 });
 
 /**
- * Carga las preguntas desde el archivo XML según el idioma seleccionado
+ * Carga el quiz según el idioma seleccionado
  */
 function loadQuiz() {
   const lang = document.getElementById('lang').value;
@@ -62,10 +49,10 @@ function loadQuiz() {
           showError('El archivo XML no contiene preguntas válidas.');
         }
       } catch (error) {
-        showError('Error al procesar el archivo XML: ' + error.message);
+        showError('Error al procesar el archivo XML.');
       }
     } else {
-      showError('Error al cargar las preguntas. Código: ' + xhr.status);
+      showError('Error al cargar las preguntas. Inténtalo de nuevo.');
     }
   };
   
@@ -80,7 +67,6 @@ function loadQuiz() {
  * Inicializa el quiz con las preguntas cargadas
  */
 function initializeQuiz() {
-  // Reiniciar estado del quiz
   quizStarted = false;
   currentQuestion = 0;
   score = 0;
@@ -94,6 +80,7 @@ function initializeQuiz() {
   document.getElementById('next-btn').textContent = 'Comenzar Quiz';
   document.getElementById('score').textContent = `Puntuación: 0/${questions.length}`;
   document.getElementById('timer').textContent = '⏱ 00:00';
+  document.getElementById('progress').style.width = '0%';
   
   // Ocultar resultados si están visibles
   document.getElementById('result').classList.add('hidden');
@@ -101,15 +88,25 @@ function initializeQuiz() {
 }
 
 /**
- * Comienza el quiz cuando el usuario hace clic en "Comenzar Quiz"
+ * Maneja el botón principal (Comenzar/Siguiente/Finalizar)
+ */
+function handleMainButton() {
+  if (!quizStarted) {
+    startQuiz();
+  } else {
+    nextQuestion();
+  }
+}
+
+/**
+ * Comienza el quiz
  */
 function startQuiz() {
   if (!questionsLoaded || questions.length === 0) {
-    showError('Las preguntas no se han cargado correctamente. Intenta recargar la página.');
+    showError('Las preguntas no se han cargado correctamente.');
     return;
   }
   
-  // Configurar estado inicial
   quizStarted = true;
   currentQuestion = 0;
   score = 0;
@@ -122,45 +119,41 @@ function startQuiz() {
     updateTimerDisplay();
   }, 1000);
   
-  // Mostrar la primera pregunta
+  // Mostrar primera pregunta
   showQuestion();
 }
 
 /**
- * Muestra la pregunta actual en la interfaz
+ * Muestra la pregunta actual
  */
 function showQuestion() {
-  // Verificar si hemos llegado al final del quiz
   if (currentQuestion >= questions.length) {
     finishQuiz();
     return;
   }
-  
+
   const question = questions[currentQuestion];
   const wording = question.getElementsByTagName('wording')[0].textContent;
   const choices = question.getElementsByTagName('choice');
-  
+
   // Mostrar la pregunta
   document.getElementById('question').textContent = wording;
-  
-  // Actualizar barra de progreso
+
+  // Actualizar progreso
   updateProgress();
-  
+
   // Limpiar opciones anteriores
   const choicesContainer = document.getElementById('choices');
   choicesContainer.innerHTML = '';
-  
-  // Añadir las opciones de respuesta
+
+  // Añadir nuevas opciones
   for (let i = 0; i < choices.length; i++) {
     const choice = choices[i];
-    const isCorrect = choice.getAttribute('correct') === 'yes';
-    
     const choiceElement = document.createElement('div');
     choiceElement.className = 'choice';
     choiceElement.textContent = choice.textContent;
-    choiceElement.dataset.correct = isCorrect;
+    choiceElement.dataset.correct = choice.getAttribute('correct') === 'yes';
     
-    // Manejar clic en la opción
     choiceElement.addEventListener('click', function() {
       if (this.classList.contains('selected')) return;
       
@@ -176,15 +169,15 @@ function showQuestion() {
     
     choicesContainer.appendChild(choiceElement);
   }
-  
-  // Actualizar la interfaz
+
+  // Actualizar UI
   updateScoreDisplay();
   document.getElementById('next-btn').disabled = true;
   updateButtonText();
 }
 
 /**
- * Maneja el evento de pasar a la siguiente pregunta
+ * Maneja el paso a la siguiente pregunta
  */
 function nextQuestion() {
   const selected = document.querySelector('.choice.selected');
@@ -194,7 +187,7 @@ function nextQuestion() {
     return;
   }
   
-  // Verificar si la respuesta es correcta
+  // Verificar respuesta
   const isCorrect = selected.dataset.correct === 'true';
   if (isCorrect) {
     score++;
@@ -212,15 +205,15 @@ function nextQuestion() {
   // Actualizar puntuación
   updateScoreDisplay();
   
-  // Deshabilitar todas las opciones
+  // Deshabilitar interacción con opciones
   document.querySelectorAll('.choice').forEach(c => {
     c.style.pointerEvents = 'none';
   });
   
-  // Habilitar el botón para continuar
+  // Habilitar botón para continuar
   document.getElementById('next-btn').disabled = false;
   
-  // Esperar un momento y pasar a la siguiente pregunta
+  // Esperar y pasar a siguiente pregunta
   setTimeout(() => {
     currentQuestion++;
     showQuestion();
@@ -228,31 +221,20 @@ function nextQuestion() {
 }
 
 /**
- * Maneja el botón principal (Comenzar/Siguiente/Finalizar)
- */
-function handleMainButton() {
-  if (!quizStarted) {
-    startQuiz();
-  } else {
-    nextQuestion();
-  }
-}
-
-/**
- * Finaliza el quiz y muestra los resultados
+ * Finaliza el quiz mostrando resultados
  */
 function finishQuiz() {
   clearInterval(timerInterval);
   
-  // Ocultar el quiz y mostrar resultados
+  // Ocultar quiz y mostrar resultados
   document.getElementById('quiz-box').classList.add('hidden');
   document.getElementById('result').classList.remove('hidden');
   
-  // Calcular tiempo transcurrido
+  // Calcular tiempo
   const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
   const seconds = (timer % 60).toString().padStart(2, '0');
   
-  // Mostrar puntuación final con formato mejorado
+  // Mostrar puntuación
   const finalScoreElement = document.getElementById('final-score');
   finalScoreElement.innerHTML = `
     <div>Puntuación final:</div>
@@ -260,7 +242,7 @@ function finishQuiz() {
     <div>Tiempo: ${minutes}:${seconds}</div>
   `;
   
-  // Mostrar mensaje según el rendimiento
+  // Mostrar mensaje según rendimiento
   const percentage = Math.round((score / questions.length) * 100);
   const messageElement = document.getElementById('result-message');
   
@@ -291,7 +273,7 @@ function resetQuiz() {
 }
 
 /**
- * Actualiza el texto del botón principal según el estado
+ * Actualiza el texto del botón principal
  */
 function updateButtonText() {
   const btn = document.getElementById('next-btn');
@@ -314,7 +296,7 @@ function updateProgress() {
 }
 
 /**
- * Actualiza el display de la puntuación
+ * Actualiza el display de puntuación
  */
 function updateScoreDisplay() {
   document.getElementById('score').textContent = `Puntuación: ${score}/${questions.length}`;
@@ -330,7 +312,7 @@ function updateTimerDisplay() {
 }
 
 /**
- * Muestra un mensaje de error en la interfaz
+ * Muestra un mensaje de error
  */
 function showError(message) {
   document.getElementById('question').textContent = message;
