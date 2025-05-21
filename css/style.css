@@ -28,7 +28,6 @@ body {
   padding: 20px;
   position: relative;
 }
-
 /* Capa semitransparente para mejorar legibilidad */
 body::before {
   content: '';
