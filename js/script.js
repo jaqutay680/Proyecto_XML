@@ -252,26 +252,34 @@ function finishQuiz() {
   const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
   const seconds = (timer % 60).toString().padStart(2, '0');
   
-  // Mostrar puntuación final
-  document.getElementById('final-score').textContent = 
-    `Puntuación: ${score}/${questions.length} en ${minutes}:${seconds}`;
+  // Mostrar puntuación final con formato mejorado
+  const finalScoreElement = document.getElementById('final-score');
+  finalScoreElement.innerHTML = `
+    <div>Puntuación final:</div>
+    <div class="big-score">${score}/${questions.length}</div>
+    <div>Tiempo: ${minutes}:${seconds}</div>
+  `;
   
   // Mostrar mensaje según el rendimiento
   const percentage = Math.round((score / questions.length) * 100);
   const messageElement = document.getElementById('result-message');
   
   if (percentage >= 90) {
-    messageElement.textContent = '¡Excelente! 🎉 Dominas este tema completamente.';
+    messageElement.innerHTML = '¡Excelente! <span class="emoji">🎉</span><br>Dominas este tema completamente.';
     messageElement.style.backgroundColor = '#e8f5e9';
+    messageElement.style.borderLeft = '5px solid #4CAF50';
   } else if (percentage >= 70) {
-    messageElement.textContent = '¡Buen trabajo! 👍 Tienes un buen conocimiento del tema.';
+    messageElement.innerHTML = '¡Buen trabajo! <span class="emoji">👍</span><br>Tienes un buen conocimiento del tema.';
     messageElement.style.backgroundColor = '#e3f2fd';
+    messageElement.style.borderLeft = '5px solid #2196F3';
   } else if (percentage >= 50) {
-    messageElement.textContent = 'No está mal. 💪 Sigue practicando para mejorar.';
+    messageElement.innerHTML = 'No está mal. <span class="emoji">💪</span><br>Sigue practicando para mejorar.';
     messageElement.style.backgroundColor = '#fff8e1';
+    messageElement.style.borderLeft = '5px solid #FFC107';
   } else {
-    messageElement.textContent = '¡Sigue intentándolo! 📚 Revisa el material y prueba de nuevo.';
+    messageElement.innerHTML = '¡Sigue intentándolo! <span class="emoji">📚</span><br>Revisa el material y prueba de nuevo.';
     messageElement.style.backgroundColor = '#ffebee';
+    messageElement.style.borderLeft = '5px solid #F44336';
   }
 }
 
